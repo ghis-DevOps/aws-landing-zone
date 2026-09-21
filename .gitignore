@@ -5,6 +5,11 @@
 *.tfstate
 *.tfstate.*
 
+# Ignore sensitive backend secrets
+*.tfbackend
+*.secret.tfbackend
+
+
 # Crash log files
 crash.log
 crash.*.log

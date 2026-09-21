@@ -1,0 +1,66 @@
+output "org_id" {
+  value       = aws_organizations_organization.main.id
+  description = "ID of the AWS Organization"
+}
+
+output "org_arn" {
+  value       = aws_organizations_organization.main.arn
+  description = "ARN of the AWS Organization"
+}
+
+output "root_id" {
+  value       = aws_organizations_organization.main.roots[0].id
+  description = "ID of the Organization Root"
+}
+
+# Organizational Unit IDs
+output "security_ou_id" {
+  value       = aws_organizations_organizational_unit.security.id
+  description = "ID of the Security OU"
+}
+
+output "infrastructure_ou_id" {
+  value       = aws_organizations_organizational_unit.infrastructure.id
+  description = "ID of the Infrastructure OU"
+}
+
+output "workloads_ou_id" {
+  value       = aws_organizations_organizational_unit.workloads.id
+  description = "ID of the top-level Workloads OU"
+}
+
+output "prod_ou_id" {
+  value       = aws_organizations_organizational_unit.prod.id
+  description = "ID of the Production child OU"
+}
+
+output "non_prod_ou_id" {
+  value       = aws_organizations_organizational_unit.non_prod.id
+  description = "ID of the Non-Production child OU"
+}
+
+# Account IDs
+output "log_archive_account_id" {
+  value       = aws_organizations_account.log_archive.id
+  description = "Account ID for Log Archive"
+}
+
+output "security_tooling_account_id" {
+  value       = aws_organizations_account.security_tooling.id
+  description = "Account ID for Security Tooling"
+}
+
+output "shared_services_account_id" {
+  value       = aws_organizations_account.shared_services.id
+  description = "Account ID for Shared Services"
+}
+
+output "prod_app_account_id" {
+  value       = aws_organizations_account.prod_app.id
+  description = "Account ID for Production Application"
+}
+
+output "dev_app_account_id" {
+  value       = aws_organizations_account.dev_app.id
+  description = "Account ID for Development Application"
+}
